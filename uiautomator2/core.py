@@ -195,7 +195,7 @@ class BasicUiautomatorServer(AbstractUiautomatorServer):
                 self._wait_ready()
 
     def _setup_jar(self):
-        assets_dir = "assets"
+        assets_dir = Path('assets')
         jar_path = assets_dir / "u2.jar"
         target_path = "/data/local/tmp/u2.jar"
         if self._check_device_file_hash(jar_path, target_path):
