@@ -64,7 +64,7 @@ class InputMethodMixIn(AbstractShell):
     
     def __setup_ime(self):
         logger.debug("installing AdbKeyboard ime")
-        assets_dir = "assets"
+        assets_dir = Path('assets')
         ime_apk_path = assets_dir / 'app-uiautomator.apk'
         self.adb_device.install(str(ime_apk_path), nolaunch=True, uninstall=True)
         # wait for ime registered
